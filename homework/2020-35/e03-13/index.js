@@ -1,4 +1,9 @@
 var readlineSync = require("readline-sync");
+function ex6Test() {
+  var y = "variable y";
+  console.log(y);
+  console.log(x);
+}
 var choice = readlineSync.question(
   "What exercise would you like to try? This folder has exercises 3-13. -->"
 );
@@ -22,6 +27,7 @@ if (choice == 3) {
   );
   console.log(Name.repeat(number));
 } else if (choice == 5) {
+  // EXERCISE 5
   console.log(
     "Create variable containing some string, for example ‘hello’. Try to cast it to number using Number - function. What do you get when this fails? Transform the result to string. Repeat the string 16 times and output it. Output also ‘batman’. 🙂 \n"
   );
@@ -32,4 +38,26 @@ if (choice == 3) {
   console.log("transforming back to string and repeating 16 times!");
   text = String(text);
   console.log(text.repeat(16) + " batman");
+} else if (choice == 6) {
+  // EXERCISE 6
+  console.log(
+    "Create application where you demonstrate the differences between var, let and const."
+  );
+  var x = "variable x";
+  console.log(x);
+  ex6Test();
+  //console.log(y); This does not work because variable y is declared in a function and therefore is not a global function.
+  //We can still use x in the function as it is global.
+  let z = "z";
+  console.log(z);
+  if (z == "z") {
+    let y = "y";
+    console.log(z + y);
+  }
+  //console.log(y); this does not work because y is declared inside an if statement
+  // Constant variables cannot be changed.
+  const muuttumaton = "Unchangeable";
+  console.log(muuttumaton);
+  //muuttumaton = "hallo"; this makes an error. You can still do other stuff with it.
+  console.log(muuttumaton.repeat(4));
 }
