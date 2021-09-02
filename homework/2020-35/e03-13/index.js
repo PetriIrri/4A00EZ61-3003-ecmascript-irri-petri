@@ -60,4 +60,19 @@ if (choice == 3) {
   console.log(muuttumaton);
   //muuttumaton = "hallo"; this makes an error. You can still do other stuff with it.
   console.log(muuttumaton.repeat(4));
+} else if (choice == 7) {
+  // EXERCISE 7
+  console.log(
+    "Create application where you demonstrate the differences when using string variables with “, ‘ and `"
+  );
+
+  let x = "hello";
+  let y = "hello";
+  //the normal way with '' or ""
+  console.log("hello " + x + y);
+  console.log("hello " + y);
+  //with `` you can go multiple lines and easily put variables into the text.
+  let z = `hello ${x + y}.
+  Second line hello! ${y}`;
+  console.log(z);
 }
