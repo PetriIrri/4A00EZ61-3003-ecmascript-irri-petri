@@ -5,7 +5,7 @@ function ex6Test() {
   console.log(x);
 }
 var choice = readlineSync.question(
-  "What exercise would you like to try? This folder has exercises 3-13. -->"
+  "What exercise would you like to try? This folder has exercises 3-7. -->"
 );
 //exercise 3
 if (choice == 3) {
