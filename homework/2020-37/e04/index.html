@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML5 Page</title>
+  </head>
+  <body>
+    <script>
+      /*
+        this references the main object that is the window. Thus this == window is true.
+        */
+      console.log(this);
+      console.log(this == window);
+      // these create new global variables.
+      this.key1 = "donald duck";
+      window.key2 = "mickey mouse";
+      var key3 = "uncle scrooge";
+      // open the document for writing
+      document.open();
+      // loop through all the keys and values in window.
+      for (const key in this) {
+        // write the results to the document.
+        document.write(`key: ${key} <br> value: ${this[key]} <br>`);
+      }
+      document.write(`key1 = ${key1}, key2 = ${key2}, key3 = ${key3}`);
+      document.close();
+    </script>
+  </body>
+</html>
