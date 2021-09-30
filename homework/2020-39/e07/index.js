@@ -22,7 +22,6 @@ function parseJson(data) {
 async function readFileAndParse(fileName) {
   const result = await readFile(fileName, "utf-8");
   const name = await parseJson(result);
-
   return name;
 }
 
