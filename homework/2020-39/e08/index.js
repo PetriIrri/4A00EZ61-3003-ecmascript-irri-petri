@@ -1,10 +1,9 @@
 import fetch from "node-fetch";
 import readlineSync from "readline-sync";
 
-function fetchFilm(q) {
+function fetchFilm(url) {
   function func(resolve, reject) {
-    const url = q;
-    fetch(q)
+    fetch(url)
       .then((res) => res.json())
       .then((json) => resolve(json.title))
       .catch((msg) => reject(msg));
@@ -13,8 +12,8 @@ function fetchFilm(q) {
   return p;
 }
 
-async function fetchData(q) {
-  const url = `https://swapi.dev/api/people/${q}/`;
+async function fetchData(id) {
+  const url = `https://swapi.dev/api/people/${id}/`;
   const res = await fetch(url);
   const obj = await res.json();
   const name = obj.name;
