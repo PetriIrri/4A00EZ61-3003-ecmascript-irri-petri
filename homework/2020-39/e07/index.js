@@ -5,9 +5,6 @@ const readFile = util.promisify(fs.readFile);
 
 function parseJson(data) {
   function func(resolve, reject) {
-    // parse the data (do not implement try catch, if exception occurs, this
-    // will be catched automatically in your catch outside of this function.
-    // if name is found from obj, call resolve, otherwise call reject
     const obj = JSON.parse(data);
     if (!("name" in obj)) {
       reject("Json file does not contain property name");
